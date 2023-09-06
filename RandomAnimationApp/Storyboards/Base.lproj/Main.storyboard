@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_72" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RandomAnimationApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m2y-WW-CTD" customClass="SpringView" customModule="SpringAnimation">
+                                <rect key="frame" x="90" y="78.666666666666686" width="250" height="150"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="6vP-r5-Z6k"/>
+                                    <constraint firstAttribute="height" constant="150" id="kwG-di-bG1"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zDg-sT-6nI" customClass="SpringButton" customModule="SpringAnimation">
+                                <rect key="frame" x="90" y="768" width="250" height="30"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="startAnimationButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8cS-E7-JUX"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="preset:  curve: force: duration: delay:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SbJ-vg-bOJ" customClass="SpringLabel" customModule="SpringAnimation">
+                                <rect key="frame" x="40" y="435.33333333333331" width="350" height="101.66666666666669"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="m2y-WW-CTD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" multiplier="4:3" id="Ah7-fi-lpg"/>
+                            <constraint firstItem="SbJ-vg-bOJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="BRh-MU-XK5"/>
+                            <constraint firstItem="m2y-WW-CTD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ERf-yQ-tYk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SbJ-vg-bOJ" secondAttribute="trailing" constant="40" id="Vne-hh-XRM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zDg-sT-6nI" secondAttribute="bottom" constant="100" id="myv-HU-s35"/>
+                            <constraint firstItem="SbJ-vg-bOJ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="20" id="oF5-Lf-k8w"/>
+                            <constraint firstItem="zDg-sT-6nI" firstAttribute="width" secondItem="m2y-WW-CTD" secondAttribute="width" id="szo-nX-qjK"/>
+                            <constraint firstItem="zDg-sT-6nI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zMK-OP-hXt"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="animationParametersLabel" destination="SbJ-vg-bOJ" id="7Af-7r-0fL"/>
+                        <outlet property="animationView" destination="m2y-WW-CTD" id="qf0-qO-Ffq"/>
+                        <outlet property="startAnimationButton" destination="zDg-sT-6nI" id="VuR-Tb-nuW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="58" y="-2"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
